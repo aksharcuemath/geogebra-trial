@@ -198,7 +198,7 @@ LearnosityAmd.define([
                 "height": height,
                 "borderColor": null,
                 "enableLabelDrags": false,
-                "showLogging": false,
+                "showLogging": true,
                 "useBrowserForJS": false,
                 "scaleContainerClass": "learnosity-item",
                 "randomSeed": computeSeed(this.question.response_id),
@@ -294,15 +294,3 @@ LearnosityAmd.define([
         Scorer: GeoGebraScorer
     };
 });
-
-function ggbOnInit() {
-ggbApplet.setMode(7);
-ggbApplet.registerAddListener("checkVector");
-}
-
-function checkVector(vector){
-v = ggbApplet.getValueString(vector);
-if(v.slice(4,10) == '(7, 9)') {
-ggbApplet.setValue("correct",1);
-}
-}
