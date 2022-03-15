@@ -294,3 +294,15 @@ LearnosityAmd.define([
         Scorer: GeoGebraScorer
     };
 });
+function ggbOnInit() {
+ggbApplet.setMode(7);
+ggbApplet.registerAddListener("checkVector");
+ggbApplet.setColor("C", 255, 0, 0);
+}
+
+function checkVector(vector){
+v = ggbApplet.getValueString(vector);
+if(v.slice(4,10) == '(7, 9)') {
+ggbApplet.setValue("correct",1);
+}
+}
